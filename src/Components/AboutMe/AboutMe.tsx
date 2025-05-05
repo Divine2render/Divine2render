@@ -31,11 +31,12 @@ const AboutMe: React.FC = () => {
               height: "100%",
               backgroundColor: "#00000045",
               zIndex: 1,
-   
             }}
           />
         </div>
-        <h1 className={styles.greeting} style={{           marginBottom: 64}}>Hi, I'm Divine Chris-Korie</h1>
+        <h1 className={styles.greeting} style={{ marginBottom: 64 }}>
+          Hi, I'm Divine Chris-Korie
+        </h1>
 
         <p className={styles.subtext}>
           I am a seasoned UI/UX Designer and AI Prompt Engineer with over 6
@@ -46,23 +47,28 @@ const AboutMe: React.FC = () => {
         </p>
 
         <p className={styles.subtext}>
-          Since 2021, I have been in the design space creating beautiful and
-          impactful digital experiences. My focus has been on usability,
-          storytelling and technology. What this means is that I don’t just
-          create beautiful designs, I make products that are usable and
-          innovative. The projects I have worked on embodies user research,
-          interaction design, and interface development, with a sharp eye for
-          clean, accessible, and conversion-driven design. I derive joy in
-          making complex systems into seamless, emotionally resonant user
-          journeys — I am available for startups, agencies, or enterprise
-          platforms. Driven both by the fear of getting replaced by A.I and by
-          the rising synergy between design and artificial intelligence, In
-          2023,
-          <br /> <br />I expanded my skill set into AI prompt engineering. This
-          move wasn’t just an addition to my skillset, it was a strategic
-          upgrade to ensure that every product I design remains intelligent,
-          scalable, and in tune with the future of technology, ensuring that
-          design remains not just beautiful, but conversational.
+          In 2021, when I started learning Product designing, my biggest goal
+          was to create beautiful, easy-to-use apps and amazing digital
+          experiences using storytelling and cutting-edge technology. Four years
+          later, that goal has been attained and is exemplified in real life
+          projects. The projects I have tackled is a testament of how meets
+          innovation, designing how things interact, and building interfaces,
+          all while keeping an eye out for clean easy-to-use, and results-driven
+          design.
+          <br /> <br />I excel at turning complicated systems into smooth
+          engaging user journeys and I am ready to work with startups, agencies,
+          individuals and big companies. Driven both by the fear of getting
+          replaced by A.I and seeing how design and artificial intelligence work
+          better together, I learned and mastered AI prompt engineering in 2023.
+          This wasn't just about adding a new skill. It was a smart move to make
+          sure that every product I create stays smart, can grow, and fits with
+          where tech is going. This way, design isn't just beautiful, it can
+          interact with people too.
+          <br /> <br />
+          As a UI/UX designer and AI prompt engineer, My approach to prompting
+          is based on context, accuracy, and purpose. I believe that a carefully
+          worded prompt does more than just give commands— it is a great way to
+          shape designs.
         </p>
 
         {/* <p className={styles.subtext}>
