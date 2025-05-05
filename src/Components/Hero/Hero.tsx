@@ -68,12 +68,10 @@ const Hero: React.FC = () => {
             <span style={{ color: "#03FF31" }}>|</span>
           </p>
           <p>
-            As a designer and AI prompt engineer, I bridge the gap between 
-            creativity and cutting-edge technology. By designing prompts that 
-            guide AI models, I ensure that AI-generated content is not only 
-            accurate but also aligns with human expectations. From designing 
-            user-centric experiences to building intelligent systems, I specialize 
-            in creating seamless AI interactions that power intuitive digital products.
+            As a designer and AI prompt engineer, I blend creativity with
+            technology to craft user-centric experiences. I design prompts that
+            guide AI to generate accurate, human-aligned content—powering
+            intuitive and intelligent digital products.
           </p>
           <button className="ctaButtonNew">
             <IoArrowForwardCircleSharp color="#000" fontSize={48} />

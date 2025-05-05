@@ -13,6 +13,7 @@ const ArticleDetails: React.FC = () => {
     return <p>Article not found</p>;
   }
   const navigate = useNavigate();
+  
   return (
     <div className={styles.articleDetailsContainer}>
       <button className="back-button" onClick={() => navigate("/articles")}>
