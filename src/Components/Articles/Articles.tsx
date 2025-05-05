@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Articles.module.css";
 import { articles } from "./RawArticles";
+import { Link } from "react-router-dom";
 
 const Articles: React.FC = () => {
   return (
@@ -11,7 +12,7 @@ const Articles: React.FC = () => {
       <div className={styles.grid}>
         {articles.map((article, index) => (
           <div key={index} className={styles.articleCard}>
-            {/* <Link to={`/article/${article.title}`} className={styles.link}> */}
+            <Link to={`/article/${article.title}`} className={styles.link}>
               <div>
                 {" "}
                 <img
@@ -26,7 +27,7 @@ const Articles: React.FC = () => {
                   </p>
                 </div>
               </div>
-            {/* </Link> */}
+            </Link>
           </div>
         ))}
       </div>

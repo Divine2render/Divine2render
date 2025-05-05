@@ -13,7 +13,7 @@ const ArticleDetails: React.FC = () => {
     return <p>Article not found</p>;
   }
   const navigate = useNavigate();
-  
+
   return (
     <div className={styles.articleDetailsContainer}>
       <button className="back-button" onClick={() => navigate("/articles")}>
@@ -27,19 +27,61 @@ const ArticleDetails: React.FC = () => {
         alt={article.title}
       />
       <div className={styles.articleContent}>
-        <p className={styles.articleDescription}>{article.description}</p>
-
+        <h2 className={styles.articleDescription}>{article.description}</h2>
         <div className={styles.articleMeta}>
-          {article.content.map((paragraph, index) => (
-            <p
-              key={index}
-              className="paragraph"
-              style={{ marginTop: 24, lineHeight: 1.8 }}
-            >
-              {paragraph}
-            </p>
-          ))}
+          {article.content.map((paragraph, index) => {
+            if (typeof paragraph === "string") {
+              return <p key={index}>{paragraph}</p>;
+            }
+            return (
+              <div key={index} style={{ marginBottom: "2rem" }}>
+                {paragraph.title && (
+                  <h2 style={{ marginTop: 64 }}>{paragraph.title}</h2>
+                )}
+                {paragraph.text && (
+                  <p
+                    style={{
+                      marginTop: "1rem",
+                      lineHeight: "1.6",
+                      fontSize: "1rem",
+                    }}
+                  >
+                    {paragraph.text.split("\n").map((line, idx) => {
+                      // Bold any word surrounded by **, for example: **bold** text
+                      const formattedLine = line
+                        .split("**")
+                        .map((part, index) => {
+                          if (index % 2 !== 0) {
+                            // If the index is odd, it means the part is surrounded by **, so make it bold
+                            return <strong key={index}>{part}</strong>;
+                          }
+                          return part;
+                        });
 
+                      return (
+                        <React.Fragment key={idx}>
+                          {formattedLine}
+                          <br />
+                        </React.Fragment>
+                      );
+                    })}
+                  </p>
+                )}
+                {paragraph.image && (
+                  <img
+                    src={paragraph.image}
+                    alt={`Illustration ${index + 1}`}
+                    style={{
+                      width: "100%",
+                      borderRadius: "8px",
+                      objectFit: "cover",
+                      marginTop: 48,
+                    }}
+                  />
+                )}
+              </div>
+            );
+          })}
           <br />
           <br />
           <br />
