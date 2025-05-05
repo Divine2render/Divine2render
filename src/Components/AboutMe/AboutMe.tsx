@@ -16,34 +16,19 @@ const AboutMe: React.FC = () => {
         <h1 className={styles.greeting}>Hi, I'm Divine Chris-Korie</h1>
 
         <p className={styles.subtext}>
-          I am a seasoned UI/UX Designer with over 6 years of experience
-          crafting beautiful, functional, and user-centered digital interfaces.
-          My passion lies in creating intuitive, visually engaging products that
-          enhance user experiences across web and mobile platforms.
+          I am a seasoned **UI/UX Designer** and **AI Prompt Engineer** with over 6 years of experience crafting beautiful, functional, and user-centered digital interfaces. My expertise lies in blending design thinking with AI-driven solutions, creating intuitive and innovative experiences that enhance user interaction with cutting-edge technologies.
         </p>
 
         <p className={styles.subtext}>
-          Throughout my career, I have had the opportunity to work across
-          multiple industries, including fintech, e-commerce, and SaaS. I bring
-          design solutions that not only look great but also improve
-          functionality and accessibility. Whether it’s conceptualizing new user
-          flows or refining detailed UI components, I approach each challenge
-          with empathy and precision.
+          Throughout my career, I have worked across various industries such as fintech, e-commerce, and SaaS, where I led projects that not only resulted in visually appealing products but also ensured they were functional, accessible, and efficient. I also specialize in crafting AI prompts that ensure optimal interactions with AI systems, enhancing user engagement.
         </p>
 
         <p className={styles.subtext}>
-          I am skilled in conducting user research, building design systems,
-          creating wireframes, and prototyping. I specialize in crafting UI
-          designs that are both functional and aesthetically pleasing while
-          always focusing on the user’s journey.
+          I’m skilled in **conducting user research**, **building design systems**, **creating wireframes**, and **prototyping**, as well as designing AI prompts that guide intelligent systems. Whether it's conceptualizing new user flows, creating AI prompts, or refining detailed UI components, I take an interdisciplinary approach to solve complex design challenges.
         </p>
 
         <p className={styles.subtext}>
-          My design philosophy centers around creating meaningful experiences. I
-          follow a user-centered design process that ensures each project I work
-          on is intuitive, accessible, and aligned with business goals. I
-          believe in the power of feedback and iteration to refine designs until
-          they perfectly meet user needs.
+          My design philosophy revolves around creating meaningful and human-centered experiences. Whether designing for human users or AI systems, I follow a user-centered approach, ensuring each project I work on aligns with user goals, business objectives, and technological advancements.
         </p>
 
         <div className={styles.toolsSection}>
@@ -57,39 +42,21 @@ const AboutMe: React.FC = () => {
             <li>Framer – Advanced prototyping and animations</li>
             <li>Illustrator – Vector graphics and logo design</li>
             <li>Photoshop – Image editing and manipulation</li>
+            <li>AI Prompt Engineering – Crafting effective prompts for AI models</li>
           </ul>
         </div>
 
         <div className={styles.rolesSection}>
           <h3 className={styles.rolesHeading}>Sample Roles I've Held:</h3>
           <ul className={styles.roleList}>
-            <li>
-              Lead UI/UX Designer – Design and Implementation of Design Systems
-            </li>
-            <li>
-              Senior UI Designer – End-to-End Design for Fintech and E-commerce
-            </li>
-            <li>
-              Branding and Visual Identity Designer – Establishing Brand
-              Standards
-            </li>
+            <li>Lead UI/UX Designer – Design and Implementation of Design Systems</li>
+            <li>Senior UI Designer – End-to-End Design for Fintech and E-commerce</li>
+            <li>Branding and Visual Identity Designer – Establishing Brand Standards</li>
             <li>UI/UX Consultant – Research-Driven Design Solutions</li>
-            <li>
-              Product Designer – Developing Interactive Prototypes for User
-              Testing
-            </li>
-            <li>
-              Senior Mobile Designer – Optimizing UI for Mobile-First Design
-            </li>
-            <li>UI Designer – Crafting UI Components for Web Applications</li>
-            <li>
-              Design System Specialist – Collaborating with Engineering Teams
-              for Scalable Components
-            </li>
-            <li>
-              Lead Visual Designer – Enhancing User Interfaces for SaaS
-              Platforms
-            </li>
+            <li>Product Designer – Developing Interactive Prototypes for User Testing</li>
+            <li>AI Prompt Engineer – Crafting Precise Inputs for AI-Driven Systems</li>
+            <li>Design System Specialist – Collaborating with Engineering Teams for Scalable Components</li>
+            <li>Lead Visual Designer – Enhancing User Interfaces for SaaS Platforms</li>
           </ul>
         </div>
 

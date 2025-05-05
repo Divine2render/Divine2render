@@ -13,6 +13,9 @@ const roles = [
   "Motion Designer",
   "Frontend Designer",
   "Human-Centered Designer",
+  "Prompt Engineer",
+  "AI Prompt Engineer",
+  "Design Systems Specialist",
 ];
 
 const Hero: React.FC = () => {
@@ -41,7 +44,7 @@ const Hero: React.FC = () => {
         }
       },
       deleting ? 50 : 100
-    ); // speed: typing slower than deleting
+    );
 
     return () => clearTimeout(timeout);
   }, [charIndex, deleting, roleIndex]);
@@ -65,9 +68,12 @@ const Hero: React.FC = () => {
             <span style={{ color: "#03FF31" }}>|</span>
           </p>
           <p>
-            I craft beautiful and functional user interfaces, blending
-            creativity with code to deliver seamless digital experiences. Let's
-            bring ideas to life!
+            As a designer and AI prompt engineer, I bridge the gap between 
+            creativity and cutting-edge technology. By designing prompts that 
+            guide AI models, I ensure that AI-generated content is not only 
+            accurate but also aligns with human expectations. From designing 
+            user-centric experiences to building intelligent systems, I specialize 
+            in creating seamless AI interactions that power intuitive digital products.
           </p>
           <button className="ctaButtonNew">
             <IoArrowForwardCircleSharp color="#000" fontSize={48} />

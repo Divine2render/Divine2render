@@ -8,7 +8,7 @@ interface Stat {
 
 const stats: Stat[] = [
   { target: 6, label: "Years of Experience" },
-  { target: 12, label: "Projects Led as Lead Designer" },
+  { target: 12, label: "Projects Led as Lead Designer & AI Prompt Engineer" },
   { target: 13, label: "Design Articles Contributed" },
 ];
 
