@@ -1,0 +1,81 @@
+.aboutContainer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* Align content to top */
+    padding: 80px 16px;
+    background-color: #fff;
+    min-height: 100vh;
+    text-align: left;
+    /* Align all text to the left */
+}
+
+.content {
+    max-width: 700px;
+    width: 100%;
+}
+
+.greeting {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #475467;
+    margin-bottom: 24px;
+}
+
+.subtext {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    color: #475467;
+    margin-bottom: 40px;
+}
+
+.ctaButton {
+    margin-top: 48px;
+    font-weight: 600;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    background-color: #000;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4999px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ctaButton p {
+    margin: 0;
+    font-weight: 600;
+    color: #fff;
+}
+
+.ctaButton:hover {
+    transform: translateY(-3px);
+}
+
+/* Styles for roles section */
+.rolesSection {
+    margin-top: 48px;
+}
+
+.rolesHeading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #475467;
+    margin-bottom: 12px;
+}
+
+.roleList {
+    list-style: none;
+    /* Remove bullet points */
+    padding: 0;
+    /* Reset padding */
+}
+
+.roleList li {
+    padding-top: 9px;
+    padding-bottom: 9px;
+    font-size: 1rem;
+    color: #475467;
+}

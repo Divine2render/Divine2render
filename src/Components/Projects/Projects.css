@@ -1,0 +1,93 @@
+.projects {
+    background-color: #fff;
+    padding: 4rem 1rem;
+    color: #111;
+    text-align: center;
+}
+
+
+
+.projects-header {
+    text-align: left;
+    max-width: 1200px;
+    margin: 0 auto 2rem;
+    padding: 0 0rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #121212;
+    text-align: left;
+}
+
+.section-description {
+    font-size: 1.1rem;
+    color: #444;
+    margin-top: 0;
+    line-height: 1.6;
+    max-width: 500px;
+}
+
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 cards by default */
+    gap: 2rem;
+    justify-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background-color: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 650px;
+}
+
+
+.project-card img {
+    width: 100%;
+    min-height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    max-height: 400px;
+}
+
+.project-info {
+    padding: 0rem;
+}
+
+.project-info h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.3rem;
+    color: #222;
+}
+
+.project-info p {
+    margin: 0;
+    font-size: 1rem;
+    color: #111;
+}
+
+
+
+.project-info {
+    padding: 0rem;
+    text-align: left;
+    padding-top: 16px;
+    padding-bottom: 48px
+        /* Aligns everything left */
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        /* 1 card on mobile */
+    }
+}

@@ -1,0 +1,86 @@
+.hero {
+    position: relative;
+    height: 100vh;
+    background-image: url('../../assets/images/main.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00000097;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    /* padding for smaller screens */
+}
+
+.hero-content {
+    text-align: left;
+    color: #fff;
+    padding: 40px 40px;
+    background-color: #00000097;
+    border-radius: 24px;
+    max-width: 700px;
+    width: 100%;
+
+}
+
+.hero-content h1 {
+    font-size: 2.4rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+
+.ctaButtonNew {
+    background-color: white;
+    color: #000;
+    border: none;
+    padding: 6px 9px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 48px;
+    font-family: var(--fontFamily);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: fit-content;
+    gap: 12px
+}
+
+.ctaButtonNew:hover {
+    background-color: whitesmoke;
+}
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .hero-content {
+        text-align: left;
+        padding: 32px 24px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.7rem;
+    }
+
+    .hero-content p {
+        font-size: 1.07rem;
+        line-height: 1.7rem;
+    }
+}

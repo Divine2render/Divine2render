@@ -1,0 +1,122 @@
+.navbar {
+    width: 100%;
+    background-color: #ffffff;
+    color: #000;
+    padding: 1rem 2rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-logo {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #000;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+    color: #555;
+}
+
+.navbar-links a.active {
+    color: #03FF31;
+    font-weight: 600;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #000;
+    cursor: pointer;
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+    @keyframes fadeSlideDown {
+        0% {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .navbar {
+        width: 100%;
+        background-color: #ffffff;
+        color: #000;
+        padding: 16px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+
+    }
+
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        background-color: #fff;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        padding: 1rem;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-links.active {
+        display: flex;
+        animation: fadeSlideDown 0.5s ease forwards;
+        gap: 48px;
+        padding-top: 48px;
+        padding-bottom: 48px;
+        border-top: 4px solid #03FF31;
+        border-bottom: 4px solid #03FF31;
+        background-color: #000;
+
+    }
+
+    .navbar-links a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
+
+    .navbar-links a:hover {
+        color: #fff;
+    }
+
+    .navbar-links a.active {
+        color: #03FF31;
+        font-weight: 600;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}

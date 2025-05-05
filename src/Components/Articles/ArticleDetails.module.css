@@ -1,0 +1,41 @@
+.articleDetailsContainer {
+    max-width: 900px;
+    margin: 48px auto;
+    padding: 16px;
+    background-color: #fff;
+    border-radius: 8px;
+
+}
+
+.articleTitle {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.articleImage {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.articleMeta {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.articleMeta p {
+    margin: 5px 0;
+}
+
+.articleDescription {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+.articleContent {
+    margin-top: 20px;
+}
