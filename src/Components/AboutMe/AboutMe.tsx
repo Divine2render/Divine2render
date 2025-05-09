@@ -43,7 +43,7 @@ const AboutMe: React.FC = () => {
         </h1>
 
         <p className={styles.subtext}>
-          I am a seasoned UI/UX Designer and AI Prompt Engineer with over 6
+          I am a seasoned UI/UX Designer and AI Prompt Engineer with over 5
           years of experience crafting beautiful, functional, and user-centered
           digital interfaces. My expertise lies in blending design thinking with
           AI-driven solutions, creating intuitive and innovative experiences
