@@ -8,6 +8,7 @@ import cw_web from "../../assets/images/cw_web/cw_web_a.png";
 import em from "../../assets/images/em/em_a.png";
 import { IoArrowForwardCircleSharp } from "react-icons/io5";
 import "../Hero/Hero.css";
+import aw from "../../assets/images/aw/aw_01.png";
 
 const sampleProjects = [
   {
@@ -45,7 +46,13 @@ const sampleProjects = [
     role: "A trading signal platform with a sharp, data-driven UI, built to help users make informed trading decisions with ease.",
     thumbnail: oti,
   },
-
+  {
+    id: 6,
+    title: "Assetsworth",
+    company: "Assetsworth",
+    role: `AssessWorth is a robust and user-centric investment platform designed to meet all your financial decision-making needs.`,
+    thumbnail: aw,
+  },
 ];
 
 const Projects: React.FC = () => {

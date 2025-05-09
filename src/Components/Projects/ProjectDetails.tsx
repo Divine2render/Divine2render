@@ -71,6 +71,11 @@ import oti_c from "../../assets/images/em/oti_c.png";
 import oti_d from "../../assets/images/em/oti_d.png";
 import oti_e from "../../assets/images/em/oti_e.png";
 
+import aw from "../../assets/images/aw/aw_01.png";
+import aw_02 from "../../assets/images/aw/aw_02.png";
+import aw_03 from "../../assets/images/aw/aw_03.png";
+import aw_04 from "../../assets/images/aw/aw_04.png";
+import aw_05 from "../../assets/images/aw/aw_05.png";
 const sampleProjects = [
   {
     id: 1,
@@ -217,6 +222,41 @@ const sampleProjects = [
       android: "",
     },
     images: [cw_web_a, cw_web_b, cw_web_c, cw_web_d],
+  },
+
+  {
+    id: 3,
+    title: "Assetsworth",
+    company: "Assetsworth",
+    role: "A culturally intelligent AI assistant that bridges the gap between African languages and modern technology through seamless translations and engaging cultural experiences.",
+    thumbnail: cw_web_a, // replace with actual image reference
+    description: [
+      "Chat Wazobia AI is an innovative AI-driven platform developed by Create Wealth, focused on empowering African communities by preserving and promoting indigenous languages and culture. The vision behind this project was to create a technology product that goes beyond utility, becoming a cultural companion that enables people to connect, communicate, and celebrate their heritage.",
+      "At the core of Chat Wazobia AI is a robust translation engine trained on a wide array of African languages, dialects, and contextual nuances. From Igbo to Yoruba, Hausa to Swahili, the system is designed to understand not just literal translations, but also the cultural meaning behind words and expressions. This was made possible through intensive data collection, native speaker collaborations, and ethical AI training practices.",
+      "In addition to translation, Chat Wazobia AI features an internal hotspot generator that enables users to explore African attires, traditions, and games. From generating vibrant traditional clothing combinations to recreating age-old games like Ayo and Ludu, the AI acts as both a stylist and cultural archivist. These features help users visually and interactively engage with the diversity of African identities.",
+      "To further deepen user engagement, the platform also supports culturally relevant voice and video calls. These aren't just standard communication features—they're enriched with real-time translation overlays and dialect switching, allowing for fluid cross-language conversations in a natural setting. This functionality is especially powerful for diaspora users looking to reconnect with their roots or collaborate across regions.",
+      "Through thoughtful UX design, voice-first interfaces, and mobile-first performance optimization, Chat Wazobia AI stands out as a digital tool that honors tradition while embracing the future. It’s not just an AI assistant—it’s a living archive, a teacher, and a bridge for African culture in the digital age.",
+    ],
+
+    links: {
+      website: "https://www.chatwazobiaai.com/",
+      android: "",
+    },
+    images: [cw_web_a, cw_web_b, cw_web_c, cw_web_d],
+  },
+
+  {
+    id: 6,
+    title: "Assetsworth",
+    company: "Assetsworth",
+    description: [
+      `AssessWorth is a robust and user-centric investment platform designed to meet all your financial decision-making needs. Whether you’re looking for educational resources, in-depth asset analysis, real-time market insights, or community support, AssessWorth offers a complete ecosystem tailored to individual investors. The platform empowers users with accurate, unbiased data and personalized recommendations, helping them make smart, confident investment decisions.
+    At its core, AssessWorth values trust, clarity, and relevance. With over five years of historical financial data, the platform ensures that every analysis and suggestion is grounded in fact. Unlike one-size-fits-all solutions, AssessWorth delivers insights that are uniquely suited to each user’s financial goals and risk profile. This personalized approach ensures that users receive guidance aligned with their specific investment journey.
+    AssessWorth’s services span a wide range of asset types, including stocks, bonds, real estate, and derivatives. From structuring and monitoring your portfolio to delivering real-time news alerts and technical analysis, the platform is built to support investors at every stage. Education also plays a central role, with tools and content designed to help users understand the “why” behind every recommendation.
+    Ultimately, AssessWorth isn’t just a tool—it’s a trusted partner in your investment journey. With a commitment to financial literacy, transparency, and community, AssessWorth is here to help you compound wealth wisely and build a more financially informed future`,
+    ],
+    thumbnail: aw,
+    images: [aw, aw_02, aw_03, aw_04, aw_05],
   },
 ];
 
