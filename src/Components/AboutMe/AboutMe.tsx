@@ -12,6 +12,10 @@ const AboutMe: React.FC = () => {
     navigate("/projects"); // Navigate to the projects route when clicked
   };
 
+  const handleCall = () => {
+    window.location.href = "https://wa.me/31647620170";
+  };
+
   return (
     <section className={styles.aboutContainer}>
       <div className={styles.content}>
@@ -136,16 +140,22 @@ const AboutMe: React.FC = () => {
           </ul>
         </div>
 
-        <div style={{ display: "flex", gap: 16, flexDirection: "column" }}>
-          <a
-            href="mailto:your@email.com"
+        <div
+          style={{
+            display: "flex",
+            gap: 16,
+            flexDirection: "column",
+            marginTop: 48,
+          }}
+        >
+          <button
+            onClick={handleCall}
             className={styles.ctaButton}
-            target="_blank"
-            rel="noopener noreferrer"
+            style={{ marginTop: 0 }}
           >
             <IoArrowForwardCircleSharp color="#fff" fontSize={48} />
-            <p>Contact me</p>
-          </a>
+            <p>Contact me</p>{" "}
+          </button>
 
           <button
             onClick={goToProjects}
