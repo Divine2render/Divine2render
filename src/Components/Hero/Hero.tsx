@@ -49,6 +49,10 @@ const Hero: React.FC = () => {
     return () => clearTimeout(timeout);
   }, [charIndex, deleting, roleIndex]);
 
+  const handleCall = () => {
+    window.location.href = "https://wa.me/31647620170";
+  };
+
   return (
     <section className="hero">
       <div className="overlay">
@@ -73,7 +77,7 @@ const Hero: React.FC = () => {
             guide AI to generate accurate, human-aligned content—powering
             intuitive and intelligent digital products.
           </p>
-          <button className="ctaButtonNew">
+          <button className="ctaButtonNew" onClick={handleCall}>
             <IoArrowForwardCircleSharp color="#000" fontSize={48} />
             <p style={{ padding: 0, margin: 0, paddingRight: 12 }}>
               Contact me
