@@ -26,6 +26,7 @@ function App() {
               </>
             }
           />
+          
           <Route path="/projects/:id" element={<ProjectDetails />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/about" element={<About />} />
