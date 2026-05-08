@@ -1,0 +1,4 @@
+# Required for React/Vite to serve index.html on all routes
+/*    /index.html   200
+
+# Redirect root domain to www (important)
