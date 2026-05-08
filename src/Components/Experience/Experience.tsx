@@ -6,7 +6,7 @@ interface Stat {
 }
 
 const stats: Stat[] = [
-  { target: 7, label: "Years of Engineering Experience" },
+  { target: 8, label: "Years of Engineering Experience" },
   { target: 12, label: "Projects Led as Architect & AI Lead" },
   { target: 13, label: "Technical Articles Published" },
 ];
