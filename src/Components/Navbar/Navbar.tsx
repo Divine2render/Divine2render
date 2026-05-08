@@ -34,7 +34,7 @@ const Navbar: React.FC = () => {
           {/* Logo with Glow Effect */}
           <Link to="/" className="group relative flex items-center">
             <span className="text-2xl font-black tracking-tighter text-white uppercase ">
-              Chris OKorie
+              Chris Korie
               <span className="text-[#03FF31] transition-all group-hover:drop-shadow-[0_0_10px_#03FF31]">
                 .
               </span>
