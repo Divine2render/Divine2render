@@ -42,7 +42,6 @@ const Experience: React.FC = () => {
           </h3>
         </div>
 
-
         <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-[#1A1A1A]">
           {stats.map((stat, i) => (
             <div
