@@ -1,11 +1,14 @@
+import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import "./ProjectDetails.css";
-import { IoArrowBackCircleSharp } from "react-icons/io5";
-import { IoArrowForwardCircleSharp } from "react-icons/io5";
+import {
+  IoArrowBackCircleSharp,
+  IoArrowForwardCircleSharp,
+} from "react-icons/io5";
+
+// --- IMAGE IMPORTS (Maintained from your source) ---
 import main from "../../assets/images/cw/cw_a.png";
 import cw_b from "../../assets/images/cw/cw_b.png";
 import cw_c from "../../assets/images/cw/cw_c.png";
-// import cw_d from "../../assets/images/cw/cw_d.png";
 import cw_e from "../../assets/images/cw/cw_e.png";
 import cw_f from "../../assets/images/cw/cw_f.png";
 import cw_g from "../../assets/images/cw/cw_g.png";
@@ -22,11 +25,9 @@ import cw_q from "../../assets/images/cw/cw_q.png";
 import cw_r from "../../assets/images/cw/cw_r.png";
 import cw_s from "../../assets/images/cw/cw_s.png";
 import cw_t from "../../assets/images/cw/cw_t.png";
-// import cw_u from "../../assets/images/cw/cw_u.png";
 import cw_v from "../../assets/images/cw/cw_v.png";
 import cw_w from "../../assets/images/cw/cw_w.png";
 import cw_x from "../../assets/images/cw/cw_x.png";
-
 import oti from "../../assets/images/oti/oti_a.png";
 import pay from "../../assets/images/100/100_a.png";
 import pay_a from "../../assets/images/pay/pay_a.png";
@@ -50,45 +51,37 @@ import pay_r from "../../assets/images/pay/pay_r.png";
 import pay_s from "../../assets/images/pay/pay_s.png";
 import pay_t from "../../assets/images/pay/pay_t.png";
 import pay_u from "../../assets/images/pay/pay_u.png";
-// import pay_v from "../../assets/images/pay/pay_v.png";
-// import pay_w from "../../assets/images/pay/pay_w.png";
-// import pay_x from "../../assets/images/pay/pay_x.png";
-
 import cw_web_a from "../../assets/images/cw_web/cw_web_a.png";
-//import cw_web from "../../assets/images/cw_web/cw_web.png";
 import cw_web_b from "../../assets/images/cw_web/cw_web_b.png";
 import cw_web_c from "../../assets/images/cw_web/cw_web_c.png";
 import cw_web_d from "../../assets/images/cw_web/cw_web_d.png";
-
 import em from "../../assets/images/em/em_a.png";
 import em_b from "../../assets/images/em/em_b.png";
 import em_c from "../../assets/images/em/em_c.png";
 import em_d from "../../assets/images/em/em_d.png";
 import em_e from "../../assets/images/em/em_e.png";
-
 import oti_b from "../../assets/images/em/oti_b.png";
 import oti_c from "../../assets/images/em/oti_c.png";
 import oti_d from "../../assets/images/em/oti_d.png";
 import oti_e from "../../assets/images/em/oti_e.png";
-
 import aw from "../../assets/images/aw/aw_01.png";
 import aw_02 from "../../assets/images/aw/aw_02.png";
 import aw_03 from "../../assets/images/aw/aw_03.png";
 import aw_04 from "../../assets/images/aw/aw_04.png";
 import aw_05 from "../../assets/images/aw/aw_05.png";
+
 const sampleProjects = [
   {
     id: 1,
-    title: "Chat Wazobia AI -  Mobile app",
+    title: "Chat Wazobia AI - Mobile",
     company: "Create Wealth",
-    role: "A culturally intelligent AI assistant that bridges the gap between African languages and modern technology through seamless translations and engaging cultural experiences.",
-    thumbnail: main, // replace with actual image reference
+    role: "UX Strategy & AI Prompt Engineering",
+    tagline: "Bridging African heritage with neural intelligence.",
+    thumbnail: main,
     description: [
-      "Chat Wazobia AI is an innovative AI-driven platform developed by Create Wealth, focused on empowering African communities by preserving and promoting indigenous languages and culture. The vision behind this project was to create a technology product that goes beyond utility, becoming a cultural companion that enables people to connect, communicate, and celebrate their heritage.",
-      "At the core of Chat Wazobia AI is a robust translation engine trained on a wide array of African languages, dialects, and contextual nuances. From Igbo to Yoruba, Hausa to Swahili, the system is designed to understand not just literal translations, but also the cultural meaning behind words and expressions. This was made possible through intensive data collection, native speaker collaborations, and ethical AI training practices.",
-      "In addition to translation, Chat Wazobia AI features an internal hotspot generator that enables users to explore African attires, traditions, and games. From generating vibrant traditional clothing combinations to recreating age-old games like Ayo and Ludu, the AI acts as both a stylist and cultural archivist. These features help users visually and interactively engage with the diversity of African identities.",
-      "To further deepen user engagement, the platform also supports culturally relevant voice and video calls. These aren't just standard communication features—they're enriched with real-time translation overlays and dialect switching, allowing for fluid cross-language conversations in a natural setting. This functionality is especially powerful for diaspora users looking to reconnect with their roots or collaborate across regions.",
-      "Through thoughtful UX design, voice-first interfaces, and mobile-first performance optimization, Chat Wazobia AI stands out as a digital tool that honors tradition while embracing the future. It’s not just an AI assistant—it’s a living archive, a teacher, and a bridge for African culture in the digital age.",
+      "Chat Wazobia AI is an innovative AI-driven platform focused on empowering African communities by preserving and promoting indigenous languages and culture.",
+      "At its core is a robust translation engine trained on a wide array of African dialects and contextual nuances, ensuring meaning isn't lost in translation.",
+      "The platform features an internal hotspot generator for exploring African attires and traditions, alongside culturally relevant voice and video calls with real-time translation overlays.",
     ],
     images: [
       cw_b,
@@ -111,53 +104,44 @@ const sampleProjects = [
       cw_t,
       cw_v,
       cw_w,
-      cw_x, // New image imports
+      cw_x,
     ],
-
-    links: {
-      website: "https://www.chatwazobiaai.com/",
-      android: "",
-    },
+    links: { website: "https://www.chatwazobiaai.com/" },
   },
-
   {
     id: 5,
     title: "OTI Signals",
     company: "OTI Signals",
-    role: "Mobile app for forex traders to follow real-time signals and get accurate insights.",
+    role: "Lead UI/UX Designer",
+    tagline: "High-precision interface for real-time forex insights.",
     thumbnail: oti,
     description: [
-      "OTI Signals was designed to serve a fast-paced trading community. The goal was to build a reliable platform that reflects precision, speed, and trust. We started with deep user research and competitor analysis to identify gaps in existing solutions.",
-      "A custom UI was developed using a data-focused typographic system. Monospaced numerals enhance readability of prices and signals, while clean geometric fonts guide users through the interface intuitively.",
-      "We adopted a minimalist color palette with emerald green (for active trades), black, and white. These choices promote quick decision-making and align with visual cues traders already trust.",
-      "The app’s logo and icon were designed around the concept of candlestick charts—integral to trading. These visuals strengthen brand recognition and stand out in crowded app stores.",
-      "Performance and usability were core priorities. Real-time notifications, signal cards, and animated transitions were optimized for mobile responsiveness. OTI Signals is now a go-to companion for both beginners and advanced traders.",
+      "OTI Signals was designed to serve a fast-paced trading community. The goal was to build a reliable platform reflecting precision, speed, and trust.",
+      "A custom UI was developed using a monospaced typographic system to enhance readability of prices and signals during high-volatility periods.",
+      "The minimalist palette utilizes emerald green for active trades, promoting quick decision-making and visual clarity.",
     ],
     links: {
       website: "https://otisignal.com/",
       android:
-        "https://play.google.com/store/apps/details?id=com.tradersignalapp&pcampaignid=web_share",
-      ios: "",
+        "https://play.google.com/store/apps/details?id=com.tradersignalapp",
     },
     images: [oti, oti_b, oti_c, oti_d, oti_e],
   },
-
   {
     id: 2,
     title: "100 Pay",
     company: "100 Pay",
-    role: "A next-gen crypto-powered checkout experience for businesses aiming to simplify in-person and online payments.",
+    role: "Product Designer",
+    tagline: "Crypto-powered checkout for the modern enterprise.",
     thumbnail: pay,
     description: [
-      "100Pay’s physical and online checkout features were built for businesses that want to speed up crypto acceptance. The challenge was to create a seamless, secure, and fast experience across offline and online retail spaces.",
-      "For physical checkouts, we designed QR code-based stickers and table tops that let customers scan and pay instantly. This solution requires no hardware and fits into any business setting — from kiosks to cafes.",
-      "The UI for online checkouts was engineered to be embeddable and intuitive, reducing drop-off rates and enhancing conversion. We supported multiple integrations with just a few lines of code.",
-      "The branding used consistent typography and color treatments from the 100Pay system, ensuring familiarity and trust across environments. We also introduced dynamic loading states and success animations to improve interaction feedback.",
-      "With our checkout solution, businesses can accept 22+ cryptocurrencies and access real-time payment updates — all within a modern, branded experience that customers enjoy.",
+      "Built for businesses aiming to simplify crypto acceptance, 100Pay bridges physical and online retail spaces through seamless QR-based payments.",
+      "The UI was engineered to be embeddable and intuitive, supporting multiple integrations with minimal code and reducing drop-off rates significantly.",
+      "The experience supports 22+ cryptocurrencies with real-time updates within a modern, branded interaction model.",
     ],
     links: {
       website: "https://100pay.co/",
-      android: "https://play.google.com/store/apps/details?id=app.pay&hl=en",
+      android: "https://play.google.com/store/apps/details?id=app.pay",
     },
     images: [
       pay_a,
@@ -165,7 +149,6 @@ const sampleProjects = [
       pay_c,
       pay_d,
       pay_e,
-      pay_n,
       pay_f,
       pay_g,
       pay_h,
@@ -187,163 +170,193 @@ const sampleProjects = [
   {
     id: 4,
     title: "Emperor Guild Studios",
-    company: "Emperor Guild Studios",
-    role: "A bold and immersive brand identity crafted for a creative studio, blending futuristic design with storytelling elegance.",
+    company: "Emperor Guild",
+    role: "Brand Architect",
+    tagline: "Futuristic identity blending storytelling and creative leadship.",
     thumbnail: em,
+    description: [
+      "Crafted a visual narrative that resonates with the studio's commitment to pushing creative boundaries in the storytelling space.",
+      "The logo design merges the crown and quill, symbolizing leadership and narrative excellence, paired with a dominant deep blue and vibrant orange palette.",
+    ],
+    links: { website: "https://www.emperorguildtech.com/" },
     images: [em, em_b, em_e, em_c, em_d],
-    description: [
-      "The inception of the Emperor Guild Studios brand identity was driven by a desire to encapsulate the essence of innovation and storytelling. Our team embarked on a journey to create a visual narrative that resonates with the studio's commitment to pushing creative boundaries. We began by conducting in-depth research into the studio's core values, target audience, and the competitive landscape. This foundational understanding informed our design direction, ensuring that every element we crafted was purposeful and aligned with the studio's vision.",
-      "Typography played a pivotal role in conveying the brand's character. We selected a modern, sans-serif typeface that exudes professionalism while maintaining a sense of approachability. The clean lines and balanced proportions of the typeface reflect the studio's precision and attention to detail. To add a unique flair, we customized certain letterforms, subtly integrating elements that hint at the studio's creative prowess and forward-thinking approach.",
-      "Color theory was meticulously applied to develop a palette that embodies Emperor Guild Studios' identity. We chose a dominant deep blue hue, symbolizing trust, depth, and stability—qualities that clients can expect from the studio. Complementary accents of vibrant orange were introduced to inject energy and creativity into the brand, creating a harmonious balance that appeals to a diverse audience.",
-      "The logo design process was an exercise in blending symbolism with simplicity. We crafted an emblem that merges the imagery of a crown and a quill, representing leadership and storytelling, respectively. This fusion not only reinforces the 'Emperor' aspect of the brand but also pays homage to the studio's narrative-driven projects. The emblem's geometric construction ensures scalability and versatility across various mediums.",
-      "To bring the brand to life, we developed a comprehensive visual language that extends beyond the logo. This included designing business stationery, social media templates, and a dynamic website interface. Each touchpoint was thoughtfully designed to maintain consistency and reinforce brand recognition. The culmination of these efforts resulted in a cohesive brand identity that positions Emperor Guild Studios as a formidable force in the creative industry.",
-    ],
-    links: {
-      website: "https://www.emperorguildtech.com/",
-    },
-    //https://www.emperorguildtech.com/
   },
   {
     id: 3,
-    title: "Chat Wazobia AI - web",
+    title: "Chat Wazobia AI - Web",
     company: "Create Wealth",
-    role: "A culturally intelligent AI assistant that bridges the gap between African languages and modern technology through seamless translations and engaging cultural experiences.",
-    thumbnail: cw_web_a, // replace with actual image reference
+    role: "Web Experience Design",
+    tagline: "Scaling cultural AI for wide-screen desktop interactions.",
+    thumbnail: cw_web_a,
     description: [
-      "Chat Wazobia AI is an innovative AI-driven platform developed by Create Wealth, focused on empowering African communities by preserving and promoting indigenous languages and culture. The vision behind this project was to create a technology product that goes beyond utility, becoming a cultural companion that enables people to connect, communicate, and celebrate their heritage.",
-      "At the core of Chat Wazobia AI is a robust translation engine trained on a wide array of African languages, dialects, and contextual nuances. From Igbo to Yoruba, Hausa to Swahili, the system is designed to understand not just literal translations, but also the cultural meaning behind words and expressions. This was made possible through intensive data collection, native speaker collaborations, and ethical AI training practices.",
-      "In addition to translation, Chat Wazobia AI features an internal hotspot generator that enables users to explore African attires, traditions, and games. From generating vibrant traditional clothing combinations to recreating age-old games like Ayo and Ludu, the AI acts as both a stylist and cultural archivist. These features help users visually and interactively engage with the diversity of African identities.",
-      "To further deepen user engagement, the platform also supports culturally relevant voice and video calls. These aren't just standard communication features—they're enriched with real-time translation overlays and dialect switching, allowing for fluid cross-language conversations in a natural setting. This functionality is especially powerful for diaspora users looking to reconnect with their roots or collaborate across regions.",
-      "Through thoughtful UX design, voice-first interfaces, and mobile-first performance optimization, Chat Wazobia AI stands out as a digital tool that honors tradition while embracing the future. It’s not just an AI assistant—it’s a living archive, a teacher, and a bridge for African culture in the digital age.",
+      "Adapting the mobile cultural experience into a robust web interface, ensuring the translation engine and cultural archive remain accessible across devices.",
+      "The web version focuses on accessibility and complex data visualization for the hotspot generator features.",
     ],
-
-    links: {
-      website: "https://www.chatwazobiaai.com/",
-      android: "",
-    },
+    links: { website: "https://www.chatwazobiaai.com/" },
     images: [cw_web_a, cw_web_b, cw_web_c, cw_web_d],
   },
-
-  {
-    id: 3,
-    title: "Assetsworth",
-    company: "Assetsworth",
-    role: "A culturally intelligent AI assistant that bridges the gap between African languages and modern technology through seamless translations and engaging cultural experiences.",
-    thumbnail: cw_web_a, // replace with actual image reference
-    description: [
-      "Chat Wazobia AI is an innovative AI-driven platform developed by Create Wealth, focused on empowering African communities by preserving and promoting indigenous languages and culture. The vision behind this project was to create a technology product that goes beyond utility, becoming a cultural companion that enables people to connect, communicate, and celebrate their heritage.",
-      "At the core of Chat Wazobia AI is a robust translation engine trained on a wide array of African languages, dialects, and contextual nuances. From Igbo to Yoruba, Hausa to Swahili, the system is designed to understand not just literal translations, but also the cultural meaning behind words and expressions. This was made possible through intensive data collection, native speaker collaborations, and ethical AI training practices.",
-      "In addition to translation, Chat Wazobia AI features an internal hotspot generator that enables users to explore African attires, traditions, and games. From generating vibrant traditional clothing combinations to recreating age-old games like Ayo and Ludu, the AI acts as both a stylist and cultural archivist. These features help users visually and interactively engage with the diversity of African identities.",
-      "To further deepen user engagement, the platform also supports culturally relevant voice and video calls. These aren't just standard communication features—they're enriched with real-time translation overlays and dialect switching, allowing for fluid cross-language conversations in a natural setting. This functionality is especially powerful for diaspora users looking to reconnect with their roots or collaborate across regions.",
-      "Through thoughtful UX design, voice-first interfaces, and mobile-first performance optimization, Chat Wazobia AI stands out as a digital tool that honors tradition while embracing the future. It’s not just an AI assistant—it’s a living archive, a teacher, and a bridge for African culture in the digital age.",
-    ],
-
-    links: {
-      website: "https://www.chatwazobiaai.com/",
-      android: "",
-    },
-    images: [cw_web_a, cw_web_b, cw_web_c, cw_web_d],
-  },
-
   {
     id: 6,
     title: "Assetsworth",
     company: "Assetsworth",
-    description: [
-      `AssessWorth is a robust and user-centric investment platform designed to meet all your financial decision-making needs. Whether you’re looking for educational resources, in-depth asset analysis, real-time market insights, or community support, AssessWorth offers a complete ecosystem tailored to individual investors. The platform empowers users with accurate, unbiased data and personalized recommendations, helping them make smart, confident investment decisions.
-    At its core, AssessWorth values trust, clarity, and relevance. With over five years of historical financial data, the platform ensures that every analysis and suggestion is grounded in fact. Unlike one-size-fits-all solutions, AssessWorth delivers insights that are uniquely suited to each user’s financial goals and risk profile. This personalized approach ensures that users receive guidance aligned with their specific investment journey.
-    AssessWorth’s services span a wide range of asset types, including stocks, bonds, real estate, and derivatives. From structuring and monitoring your portfolio to delivering real-time news alerts and technical analysis, the platform is built to support investors at every stage. Education also plays a central role, with tools and content designed to help users understand the “why” behind every recommendation.
-    Ultimately, AssessWorth isn’t just a tool—it’s a trusted partner in your investment journey. With a commitment to financial literacy, transparency, and community, AssessWorth is here to help you compound wealth wisely and build a more financially informed future`,
-    ],
+    role: "UX Researcher & Designer",
+    tagline: "Data-grounded financial decision-making ecosystem.",
     thumbnail: aw,
+    description: [
+      "AssessWorth is a user-centric investment platform delivering personalized recommendations based on five years of historical financial data.",
+      "The platform supports stocks, bonds, real estate, and derivatives, focusing on financial literacy and transparent portfolio monitoring.",
+    ],
     images: [aw, aw_02, aw_03, aw_04, aw_05],
   },
 ];
 
-const ProjectDetails = () => {
+const ProjectDetails: React.FC = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const project = sampleProjects.find((p) => p.id === parseInt(id!));
 
-  if (!project) return <p style={{ padding: 40 }}>Project not found.</p>;
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
+
+  if (!project)
+    return (
+      <div className="h-screen bg-[#050505] flex items-center justify-center">
+        <p className="text-[#03FF31] font-mono uppercase tracking-widest">
+          Project Archive Not Found_
+        </p>
+      </div>
+    );
 
   return (
-    <section className="project-details">
-      <button className="back-button" onClick={() => navigate("/")}>
-        <IoArrowBackCircleSharp size={36} color="#000" />
-        <span>Back to Projects</span>
-      </button>
-      <img
-        src={project.thumbnail}
-        alt={project.title}
-        className="project-banner"
-      />
-      <div className="details-content">
-        <h2>{project.title}</h2>
-        <p>{project.role}</p>
-        {project.description.map((paragraph, index) => (
-          <p key={index} className="paragraph">
-            {paragraph}
-          </p>
-        ))}
+    <section className="bg-[#050505] min-h-screen text-gray-400 pb-32 pt-[200px]">
+      <div className="max-w-6xl mx-auto px-6">
+        {/* Navigation */}
+        <button
+          onClick={() => navigate("/")}
+          className="group flex items-center gap-4 mb-16 hover:text-[#03FF31] transition-colors"
+        >
+          <IoArrowBackCircleSharp className="text-4xl text-white group-hover:text-[#03FF31] transition-colors" />
+          <span className="font-mono text-[10px] uppercase tracking-[0.4em]">
+            Back to Index
+          </span>
+        </button>
 
-        {project.images && project.images.length > 0 && (
-          <div className="project-images">
-            {project.images.map((image, index) => (
-              <img
+        {/* Header Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-24 items-start">
+          <div className="lg:col-span-8">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-8 h-[1px] bg-[#03FF31]"></div>
+              <span className="text-[#03FF31] text-[10px] tracking-[0.4em] font-black uppercase">
+                Case Study // {project.company}
+              </span>
+            </div>
+            <h1 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter leading-none mb-8">
+              {project.title}
+            </h1>
+            <p className="text-xl text-white font-bold uppercase tracking-tight max-w-2xl">
+              {project.tagline}
+            </p>
+          </div>
+          <div className="lg:col-span-4 lg:text-right pt-4">
+            <span className="block text-[10px] font-mono uppercase text-gray-600 mb-2">
+              Role
+            </span>
+            <span className="text-white font-black uppercase tracking-widest text-sm italic">
+              {project.role}
+            </span>
+          </div>
+        </div>
+
+        {/* Hero Banner */}
+        <div className="relative group mb-24 overflow-hidden border border-[#1A1A1A]">
+          <div className="absolute inset-0 bg-[#03FF31]/5 mix-blend-overlay group-hover:bg-transparent transition-all duration-700"></div>
+          <img
+            src={project.thumbnail}
+            alt={project.title}
+            className="w-full h-auto transition-all duration-1000"
+          />
+        </div>
+
+        {/* Narrative Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-32 border-t border-[#1A1A1A] pt-16">
+          <div className="lg:col-span-4">
+            <h3 className="text-[#03FF31] font-mono text-[10px] uppercase tracking-[0.4em] sticky top-32">
+              01 // Analysis & Brief
+            </h3>
+          </div>
+          <div className="lg:col-span-8 space-y-8 text-lg leading-relaxed">
+            {project.description.map((paragraph, index) => (
+              <p
                 key={index}
-                src={image}
-                alt={`Project Image ${index + 1}`}
-                className="project-banner"
-                style={{ marginTop: 12 }}
-              />
+                className={index === 0 ? "text-white font-medium text-xl" : ""}
+              >
+                {paragraph}
+              </p>
             ))}
+          </div>
+        </div>
+
+        {/* Visual Gallery */}
+        {project.images && project.images.length > 0 && (
+          <div className="space-y-12 mb-32">
+            <div className="flex items-center gap-4 mb-12">
+              <h3 className="text-[#03FF31] font-mono text-[10px] uppercase tracking-[0.4em]">
+                02 // Visual Architecture
+              </h3>
+              <div className="flex-1 h-[1px] bg-[#1A1A1A]"></div>
+            </div>
+            <div className="grid grid-cols-1 gap-12">
+              {project.images.map((img, idx) => (
+                <div
+                  key={idx}
+                  className="border border-[#1A1A1A] bg-[#0A0A0A] p-4"
+                >
+                  <img
+                    src={img}
+                    alt={`Artifact ${idx + 1}`}
+                    className="w-full h-auto transition-all duration-700"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         )}
 
-        {project.links && (
-          <div
-            style={{
-              marginTop: 48,
-              display: "flex",
-              gap: 16,
-              backgroundColor: "#f4f4f4",
-              padding: `48px 16px`,
-              flexDirection: "column",
-            }}
-          >
-            {project.links.website && (
+        {/* Deployments / Call to Action */}
+        <div className="border-t border-[#1A1A1A] pt-24">
+          <h3 className="text-[#03FF31] font-mono text-[10px] uppercase tracking-[0.4em] mb-12">
+            03 // Live Environment
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {project.links?.website && (
               <a
                 href={project.links.website}
                 target="_blank"
-                rel="noopener noreferrer"
-                style={{ textDecoration: "none" }}
+                rel="noreferrer"
+                className="group flex items-center justify-between p-8 border border-[#1A1A1A] hover:border-[#03FF31] transition-all duration-500 bg-[#080808]"
               >
-                <button className="ctaButtonNew">
-                  <IoArrowForwardCircleSharp color="#000" fontSize={48} />
-                  <p style={{ padding: 0, margin: 0, paddingRight: 12 }}>
-                    View Website
-                  </p>
-                </button>
+                <span className="text-white font-black uppercase tracking-widest text-xl">
+                  Explore Web
+                </span>
+                <IoArrowForwardCircleSharp className="text-4xl text-[#03FF31] group-hover:translate-x-2 transition-transform" />
               </a>
             )}
-            {project.links.android && (
+            {project.links?.android && (
               <a
                 href={project.links.android}
                 target="_blank"
-                rel="noopener noreferrer"
-                style={{ textDecoration: "none" }}
+                rel="noreferrer"
+                className="group flex items-center justify-between p-8 border border-[#1A1A1A] hover:border-[#03FF31] transition-all duration-500 bg-[#080808]"
               >
-                <button className="ctaButtonNew">
-                  <IoArrowForwardCircleSharp color="#000" fontSize={48} />
-                  <p style={{ padding: 0, margin: 0, paddingRight: 12 }}>
-                    Download on Android
-                  </p>
-                </button>
+                <span className="text-white font-black uppercase tracking-widest text-xl">
+                  Play Store
+                </span>
+                <IoArrowForwardCircleSharp className="text-4xl text-[#03FF31] group-hover:translate-x-2 transition-transform" />
               </a>
             )}
           </div>
-        )}
+        </div>
       </div>
     </section>
   );

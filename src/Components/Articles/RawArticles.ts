@@ -20,6 +20,44 @@ import guide from '../../assets/images/art/c/guide.png'
 
 export const articles = [
     {
+        title: "Engineering Intent: A 4-Year Retrospective",
+        image: "path/to/your/biography-image.png",
+        description: "From scaling student platforms to 170k users to founding UK tech ventures and NHS-recognized health solutions.",
+        category: "Professional Profile",
+        publisher: "Divine Chris-Korie",
+        publishDate: "2026 05 08",
+        content: [
+            {
+                title: "Design with Consequences",
+                text: "I am a Product and UX Designer who builds AI-powered digital products that solve real problems for real people. I have spent the past four years designing platforms used by hundreds of thousands of users, founding a UK-registered technology company, and developing an original health platform concept that received unsolicited recognition from a senior NHS authority before a single line of code was written. I am based in Middlesbrough in the North East of England and I work with teams and founders who want their products to do more than just look good."
+            },
+            {
+                title: "01 // The FlexxCBT Catalyst",
+                text: "My career started in March 2021 when I was handed the FlexxCBT redesign at Flexxme Software Technologies. The app was already serving over 100,000 students preparing for Nigeria's most competitive university entrance examination and the stakes were high. I rebuilt the entire interface, fixed the onboarding flow, introduced a token-based monetisation system that had never existed before, and grew the user base by 10%. That project taught me that design decisions have consequences and I have worked with that mindset ever since. The platform now serves over 170,000 users and I have owned its design evolution continuously since that first brief."
+            },
+            {
+                title: "02 // Scaling Jucy AI",
+                text: "From there I went on to lead the design of Jucy AI, a no-code AI chatbot platform that enables businesses to build and deploy intelligent agents without writing a single line of code. I designed the full user experience from the ground up, including the onboarding flow, the agent configuration interface, the widget customisation tools and the knowledge base training system. The platform scaled to over 10,000 registered users and 4,700 active subscribers, with user conversion improving by more than 20% following my redesign."
+            },
+            {
+                title: "03 // MyQuickserve & CareOps",
+                text: "In April 2024 I founded MyQuickserve Digital Solutions Ltd, a UK company that generated over £55,000 in revenue in its first year delivering digital automation systems to clients in the healthcare sector. The company is now transitioning into a product business. I am currently building CareOps, an AI-powered operations platform for UK care agencies that replaces paper timesheets, manual shift scheduling and fragmented invoicing with one intelligent system. It has a built-in AI shift assistant that learns staff patterns and contacts the right person automatically when a shift needs filling."
+            },
+            {
+                title: "04 // Bridging the Gap",
+                text: "I am also developing a platform that connects UK businesses with vetted Nigerian Virtual Assistants, using the GMT plus one timezone overlap to deliver real-time remote support at an affordable price point. Alongside all of this, I am developing an original AI-powered health platform that addresses a documented gap in digital support for a specific patient community in the UK. The concept is backed by primary research with over 300 confirmed users, 69% of whom are UK-based, and has received unsolicited recognition from a senior NHS authority."
+            },
+            {
+                title: "05 // Process & Philosophy",
+                text: "My design process is research-led and practical. Figma is my primary tool for everything from early wireframes to production-ready prototypes. I work at a professional level with Claude AI, using it to accelerate product thinking, structure complex problems and generate solutions faster than traditional workflows allow. I build and manage WordPress sites, work closely with engineers and product teams, and I understand how to translate technical complexity into interfaces that feel effortless for the people using them."
+            },
+            {
+                title: "Summary",
+                text: "I also authored a piece published in P.M. News Nigeria in 2023 exploring how generative AI was going to reshape the UI/UX design profession. It turned out to be more accurate than I expected. Ultimately, good design is not about how it looks. It is about what it does and who it does it for."
+            }
+        ]
+    },
+    {
         title: "UI Design Best Practices",
         image: ui, description: "An introduction to UI Design Best Practices",
         category: "UI Design",
