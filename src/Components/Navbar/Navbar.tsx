@@ -7,12 +7,21 @@ const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
-  // Handle scroll effect for the glassmorphism
+  // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Lock body scroll when menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [menuOpen]);
 
   const navLinks = [
     { label: "Home", path: "/" },
@@ -25,24 +34,21 @@ const Navbar: React.FC = () => {
     <nav
       className={`fixed top-0 z-50 w-full transition-all duration-500 ${
         scrolled
-          ? "py-4 bg-[#050505]/80 backdrop-blur-xl border-b border-[#03FF31]/10"
+          ? "py-4 bg-[#050505]/90 backdrop-blur-xl border-b border-[#1A1A1A]"
           : "py-6 bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-8">
         <div className="flex justify-between items-center">
-          {/* Logo with Glow Effect */}
-          <Link to="/" className="group relative flex items-center">
-            <span className="text-2xl font-black tracking-tighter text-white uppercase ">
+          {/* Logo */}
+          <Link to="/" className="group relative flex items-center z-[60]">
+            <span className="text-2xl font-black tracking-tighter text-white uppercase">
               Chris Korie
-              <span className="text-[#03FF31] transition-all group-hover:drop-shadow-[0_0_10px_#03FF31]">
-                .
-              </span>
+              <span className="text-[#03FF31]">.</span>
             </span>
-            <div className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#03FF31] transition-all duration-300 group-hover:w-full"></div>
           </Link>
 
-          {/* Desktop Nav - Tech Brutalist Style */}
+          {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-12">
             {navLinks.map((link) => (
               <Link
@@ -55,7 +61,6 @@ const Navbar: React.FC = () => {
                 }`}
               >
                 {link.label}
-                {/* Underline for active/hover */}
                 <span
                   className={`absolute -bottom-2 left-0 h-[1px] bg-[#03FF31] transition-all duration-300 ${
                     location.pathname === link.path
@@ -67,40 +72,95 @@ const Navbar: React.FC = () => {
             ))}
           </div>
 
-          {/* Contact CTA - Custom Button Style */}
+          {/* Desktop CTA */}
           <div className="hidden md:block">
             <button className="px-5 py-2 border border-[#03FF31] text-[#03FF31] text-[10px] uppercase tracking-widest font-bold hover:bg-[#03FF31] hover:text-black transition-all duration-300">
               Get in touch
             </button>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Toggle */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden text-[#03FF31] transition-transform active:scale-90"
+            className="md:hidden relative z-[60] text-[#03FF31] p-2"
           >
-            {menuOpen ? <FiX size={30} /> : <FiMenu size={30} />}
+            {menuOpen ? <FiX size={32} /> : <FiMenu size={32} />}
           </button>
         </div>
       </div>
 
       {/* Full-Screen Mobile Overlay */}
       <div
-        className={`fixed inset-0 bg-[#050505] transition-all duration-700 ease-in-out ${
-          menuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
-        } -z-10 flex flex-col justify-center items-center space-y-8`}
+        className={`fixed inset-0 bg-[#050505] z-[50] flex flex-col justify-center px-8 transition-transform duration-700 ease-[cubic-bezier(0.85,0,0.15,1)] ${
+          menuOpen ? "translate-y-0" : "-translate-y-full"
+        }`}
       >
-        {navLinks.map((link, i) => (
-          <Link
-            key={link.path}
-            to={link.path}
-            onClick={() => setMenuOpen(false)}
-            className="text-4xl font-black uppercase tracking-tighter text-white hover:text-[#03FF31] transition-colors"
-            style={{ transitionDelay: `${i * 100}ms` }}
-          >
-            {link.label}
-          </Link>
-        ))}
+        {/* Background Grid Pattern */}
+        <div
+          className="absolute inset-0 opacity-[0.03] pointer-events-none"
+          style={{
+            backgroundImage: `radial-gradient(#03FF31 1px, transparent 1px)`,
+            backgroundSize: "40px 40px",
+          }}
+        ></div>
+
+        <div className="relative space-y-10">
+          {navLinks.map((link, i) => (
+            <Link
+              key={link.path}
+              to={link.path}
+              onClick={() => setMenuOpen(false)}
+              className="group block relative"
+            >
+              <div
+                className={`flex items-baseline gap-6 transition-all duration-500 transform ${
+                  menuOpen
+                    ? "translate-x-0 opacity-100"
+                    : "-translate-x-10 opacity-0"
+                }`}
+                style={{ transitionDelay: `${i * 100 + 300}ms` }}
+              >
+                <span className="text-[#03FF31] font-mono text-sm opacity-50">
+                  0{i + 1}
+                </span>
+                <h2
+                  className={`text-6xl sm:text-8xl font-black uppercase tracking-tighter transition-colors ${
+                    location.pathname === link.path
+                      ? "text-[#03FF31]"
+                      : "text-white group-hover:text-[#03FF31]"
+                  }`}
+                >
+                  {link.label}
+                </h2>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+        {/* Mobile Footer Context */}
+        <div
+          className={`absolute bottom-12 left-8 transition-opacity duration-500 delay-700 ${
+            menuOpen ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <p className="text-[10px] text-gray-500 uppercase tracking-[0.5em] mb-4">
+            Middlesbrough, UK / Worldwide
+          </p>
+          <div className="flex gap-6">
+            <a
+              href="#"
+              className="text-[#03FF31] text-[10px] font-bold uppercase tracking-widest"
+            >
+              LinkedIn
+            </a>
+            <a
+              href="#"
+              className="text-[#03FF31] text-[10px] font-bold uppercase tracking-widest"
+            >
+              Twitter
+            </a>
+          </div>
+        </div>
       </div>
     </nav>
   );
